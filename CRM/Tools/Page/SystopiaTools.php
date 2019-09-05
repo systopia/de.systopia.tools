@@ -40,7 +40,7 @@ class CRM_Tools_Page_SystopiaTools extends CRM_Core_Page {
   protected function runTool($tool_name) {
     switch ($tool_name) {
       case 'contact_updater':
-        // TODO
+        CRM_Tools_ContactUpdater::launchDBRunner();
         break;
 
       default:
