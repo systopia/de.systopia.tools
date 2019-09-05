@@ -25,7 +25,7 @@ use CRM_Tools_ExtensionUtil as E;
 class CRM_Tools_ContactUpdater {
 
   /**
-   * Update sort name, display name, and greetings of the given contacts
+   * Update sort name and display name  of the given contacts
    * @param $contact_ids array contact_ids
    */
   public static function updateContacts($contact_ids) {
@@ -114,7 +114,7 @@ class CRM_Tools_ContactUpdater {
   }
 
   // job size for runner
-  const JOB_SIZE = 25;
+  const JOB_SIZE = 50;
 
   /**
    * Use CRM_Queue_Runner to update every non-deleted contact in the DB

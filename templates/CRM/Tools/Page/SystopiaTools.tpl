@@ -18,6 +18,6 @@
 
 <div class="systopia-tool">
     <h3>{ts domain="de.systopia.tools"}Contact Updater{/ts}</h3>
-    <div><span>{ts domain="de.systopia.tools"}Will refresh sort name, display name, and greetings for all contacts in the database.{/ts}</span></div>
+    <div><span>{ts domain="de.systopia.tools"}Will refresh sort name and display name for all contacts in the database.{/ts}</span></div>
     <div><a id="new" class="button" href="{crmURL p="civicrm/systopia/tools" q="run=contact_updater"}"><span><i class="crm-i fa-refresh"></i>{ts domain="de.systopia.tools"}Update Contacts{/ts}</span></a></div>
 </div>
