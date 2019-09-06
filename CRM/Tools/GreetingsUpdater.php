@@ -217,7 +217,7 @@ class CRM_Tools_GreetingsUpdater {
   public function run($context) {
     // get contact IDs
     $contact_ids = [];
-    $contact_query = CRM_Core_DAO::executeQuery("SELECT id AS contact_id FROM civicrm_contact WHERE is_deleted IS NULL OR is_deleted = 0 LIMIT {$this->limit} OFFSET {$this->offset}");
+    $contact_query = CRM_Core_DAO::executeQuery("SELECT id AS contact_id FROM civicrm_contact WHERE is_deleted IS NULL OR is_deleted = 0 ORDER BY id ASC LIMIT {$this->limit} OFFSET {$this->offset}");
     while ($contact_query->fetch()) {
       $contact_ids[] = $contact_query->contact_id;
     }
