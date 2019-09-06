@@ -22,7 +22,7 @@ use CRM_Tools_ExtensionUtil as E;
  *
  * Tools overview page
  */
-class CRM_Tools_ContactUpdater {
+class CRM_Tools_NameUpdater {
 
   /**
    * Update sort name and display name  of the given contacts
@@ -133,7 +133,7 @@ class CRM_Tools_ContactUpdater {
     // create runner items
     $offset = 0;
     while ($contact_count > 0) {
-      $queue->createItem(new CRM_Tools_ContactUpdater($offset, self::JOB_SIZE));
+      $queue->createItem(new CRM_Tools_NameUpdater($offset, self::JOB_SIZE));
       $contact_count -= self::JOB_SIZE;
       $offset        += self::JOB_SIZE;
     }
