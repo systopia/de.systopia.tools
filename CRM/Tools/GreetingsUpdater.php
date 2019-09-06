@@ -102,7 +102,9 @@ class CRM_Tools_GreetingsUpdater {
         }
 
         // calculate the current value
-        $new_greeting = substr(trim(CRM_Utils_Address::format($contact, $current_formula, FALSE, FALSE, $tokenFields)), 0, 255);
+        CRM_Utils_Token::replaceGreetingTokens($current_formula, $contact, $contact_id, 'CRM_Contact_BAO_Contact', TRUE);
+        $new_greeting = CRM_Core_Smarty::singleton()->fetch("string:$current_formula");
+        $new_greeting = substr(trim($new_greeting), 0, 255);
 
         // if changed, add to list:
         if ($new_greeting != $old_greeting) {
