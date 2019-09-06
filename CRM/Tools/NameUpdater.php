@@ -114,7 +114,7 @@ class CRM_Tools_NameUpdater {
   }
 
   // job size for runner
-  const JOB_SIZE = 50;
+  const JOB_SIZE = 250;
 
   /**
    * Use CRM_Queue_Runner to update every non-deleted contact in the DB

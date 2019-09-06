@@ -120,7 +120,7 @@ class CRM_Tools_GreetingsUpdater {
         }
         $contact_bao->save();
         $contact_bao->free();
-        Civi::log()->debug("updated greeting for [{$contact['id']}]");
+        //Civi::log()->debug("updated greeting for [{$contact['id']}]");
       }
     }
   }
@@ -162,7 +162,7 @@ class CRM_Tools_GreetingsUpdater {
   }
 
   // job size for runner
-  const JOB_SIZE = 50;
+  const JOB_SIZE = 250;
 
   /**
    * Use CRM_Queue_Runner to update every non-deleted contact in the DB
