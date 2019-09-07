@@ -103,7 +103,11 @@ class CRM_Tools_GreetingsUpdater {
 
         // calculate the current value
         CRM_Utils_Token::replaceGreetingTokens($current_formula, [[$contact_id => $contact]], $contact_id, 'CRM_Contact_BAO_Contact', TRUE);
+        // render smarty
         $new_greeting = CRM_Core_Smarty::singleton()->fetch("string:$current_formula");
+        // remove multiple whitespaces
+        $new_greeting = preg_replace('/\s+/', ' ', $new_greeting);
+        // trim and truncate
         $new_greeting = substr(trim($new_greeting), 0, 255);
 
         // if changed, add to list:
