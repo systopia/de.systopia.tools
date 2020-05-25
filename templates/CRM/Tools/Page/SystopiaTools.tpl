@@ -29,3 +29,12 @@
     <div><a id="new" class="button" href="{crmURL p="civicrm/systopia/tools" q="run=name_updater"}"><span><i class="crm-i fa-refresh"></i>{ts domain="de.systopia.tools"}Update All Contacts{/ts}</span></a></div>
     <div class="clear"></div>
 </div>
+
+<h2>{ts domain="de.systopia.tools"}API Tools{/ts}</h2><br/>
+
+<div class="systopia-tool">
+    <h3>{ts domain="de.systopia.tools"}API Runner{/ts}</h3>
+    <div><span>{ts domain="de.systopia.tools"}Handy tool for API debugging{/ts}</span></div>
+    <div><a id="new" class="button" href="{crmURL p="civicrm/systopia/tools/apirunner"}"><span><i class="crm-i fa-bolt"></i>{ts domain="de.systopia.tools"}API Runner{/ts}</span></a></div>
+    <div class="clear"></div>
+</div>
