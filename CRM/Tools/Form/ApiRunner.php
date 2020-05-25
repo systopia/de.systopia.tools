@@ -120,15 +120,27 @@ class CRM_Tools_Form_ApiRunner extends CRM_Core_Form
      */
     protected function extractParameters($data)
     {
+        $return_data = null;
+
         // first: try JSON
         $json_data = json_decode($data, true);
         if ($json_data && is_array($json_data)) {
-            return $json_data;
+            $return_data = $json_data;
         }
 
         // todo: more parsers?
 
-        // nothing found
-        throw new Exception(E::ts("Couldn't parse parameter data"));
+        if ($return_data) {
+            // clean some parameters
+            unset($return_data['version']);
+            unset($return_data['check_permissions']);
+
+            // and return
+            return $return_data;
+
+        } else {
+            // nothing found
+            throw new Exception(E::ts("Couldn't parse parameter data"));
+        }
     }
 }
