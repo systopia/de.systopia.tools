@@ -16,6 +16,16 @@
 require_once 'tools.civix.php';
 use CRM_Tools_ExtensionUtil as E;
 
+function mods_civicrm_searchTasks($objectType, &$tasks)
+{
+    if ($objectType == 'contact') {
+        $tasks[] = [
+            'title' => E::ts('Group - add many contacts'),
+            'class' => 'CRM_Tools_Form_Task_GroupAddManyContacts',
+            'result' => false
+        ];
+    }
+}
 
 /**
  * Implements hook_civicrm_navigationMenu().
