@@ -48,8 +48,8 @@ class CRM_Tools_Form_Task_GroupAddManyContacts extends CRM_Contact_Form_Task
         $values = $this->exportValues(null, true);
         $targetGroupId = $values[self::TARGET_GROUP_ELEMENT_NAME];
 
-        // Forward to the group:
-        $targetUrl = CRM_Utils_System::url('civicrm/group/search', 'reset=1&force=1&gid=' . $targetGroupId);
+        // Forward back to the search:
+        $targetUrl = CRM_Core_Session::singleton()->readUserContext();
 
         CRM_Tools_Queue_Runner_GroupContactAddingLauncher::launchRunner($contactIds, $targetGroupId, $targetUrl);
     }
