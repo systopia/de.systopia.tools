@@ -16,7 +16,7 @@
 require_once 'tools.civix.php';
 use CRM_Tools_ExtensionUtil as E;
 
-function mods_civicrm_searchTasks($objectType, &$tasks)
+function tools_civicrm_searchTasks($objectType, &$tasks)
 {
     if ($objectType == 'contact') {
         $tasks[] = [

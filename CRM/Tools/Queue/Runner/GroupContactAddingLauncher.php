@@ -34,7 +34,7 @@ abstract class CRM_Tools_Queue_Runner_GroupContactAddingLauncher
         $queue = CRM_Queue_Service::singleton()->create(
             [
                 'type' => 'Sql',
-                'name' => 'mods_generator_' . CRM_Core_Session::singleton()->getLoggedInContactID(),
+                'name' => 'tools_group_contact_adding_' . CRM_Core_Session::singleton()->getLoggedInContactID(),
                 'reset' => true,
             ]
         );
