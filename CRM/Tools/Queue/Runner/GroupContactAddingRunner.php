@@ -44,15 +44,30 @@ class CRM_Tools_Queue_Runner_GroupContactAddingRunner
 
     public function run(): bool
     {
-        $result = civicrm_api3(
-            'GroupContact',
-            'create',
-            [
-                'group_id' => $this->groupId,
-                'contact_id' => $this->contactIds,
-            ]
-        );
+        $errorMessages = '';
 
-        return $result['is_error'] == 0;
+        foreach ($this->contactIds as $contactId) {
+            try {
+                civicrm_api3(
+                    'GroupContact',
+                    'create',
+                    [
+                        'group_id' => $this->groupId,
+                        'contact_id' => $contactId,
+                    ]
+                );
+            } catch (CiviCRM_API3_Exception $exception) {
+                $errorMessages .= $exception->getMessage() . "\n";
+                // TODO: Is this kind of bundling elegant enough?
+            }
+        }
+
+        // Show the error messages bundled together:
+        if (!empty($errorMessages)) {
+            CRM_Core_Session::setStatus($errorMessages, '', 'error');
+        }
+
+        // Do not halt on failures:
+        return true;
     }
 }
