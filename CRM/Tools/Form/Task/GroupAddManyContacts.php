@@ -32,7 +32,12 @@ class CRM_Tools_Form_Task_GroupAddManyContacts extends CRM_Contact_Form_Task
             [
                 'entity' => 'Group',
                 'api' => [
-                    'params' => []
+                    'params' => [
+                        'is_active' => '1',
+                        'is_hidden' => '0',
+                        'is_reserved' => '0',
+                        'saved_search_id' => ['IS NULL' => 1],
+                    ]
                 ]
             ],
             true
