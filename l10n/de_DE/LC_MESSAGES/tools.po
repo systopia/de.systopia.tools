@@ -1,0 +1,37 @@
+# Copyright CiviCRM LLC (c) 2004-2015
+# This file is distributed under the same license as the CiviCRM package.
+# If you contribute heavily to a translation and deem your work copyrightable,
+# make sure you license it to CiviCRM LLC under Academic Free License 3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: de.systopia.tools\n"
+"POT-Creation-Date: 2020-08-13 11:45+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: B. Zschiedrich\n"
+"Language-Team: SYSTOPIA <info@systopia.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: tools.php
+msgid "Group - add many contacts"
+msgstr "Gruppe - Viele Kontakte hinzufügen"
+
+#: CRM/Tools/Form/Task/GroupAddManyContacts.php
+msgid "Target group"
+msgstr "Zielgruppe"
+
+#: CRM/Tools/Queue/Runner/GroupContactAddingLauncher.php
+msgid "Adding contacts."
+msgstr "Füge Kontakte hinzu."
+
+#: CRM/Tools/Queue/Runner/GroupContactAddingRunner.php
+msgid "Adding contact %1 to %2."
+msgstr "Füge Kontakte %1 bis %2 hinzu."
+
+#: CRM/Tools/Queue/Runner/GroupContactAddingRunnerStart.php
+msgid "Adding contacts. Batch size is %1."
+msgstr "Es werden %1 Kontakte in jedem Arbeitsschritt hinzugefügt."
