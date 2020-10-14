@@ -6,4 +6,10 @@
     <title>SYSTOPIA Tools</title>
     <access_arguments>administer CiviCRM</access_arguments>
   </item>
+  <item>
+    <path>civicrm/systopia/tools/apirunner</path>
+    <page_callback>CRM_Tools_Form_ApiRunner</page_callback>
+    <title>ApiRunner</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
 </menu>
