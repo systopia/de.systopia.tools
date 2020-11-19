@@ -90,11 +90,12 @@ class CRM_Tools_Form_ApiRunner extends CRM_Core_Form
         } catch (CiviCRM_API3_Exception $ex) {
             $result = '';
             $error  = $ex->getMessage();
+            $error  .= '<br/><br/>';
             $error  .= $ex->getTraceAsString();
         }
 
-        $this->assign('result', json_encode($result, JSON_PRETTY_PRINT));
-        $this->assign('error', json_encode($error, JSON_PRETTY_PRINT));
+        $this->assign('api_result', json_encode($result, JSON_PRETTY_PRINT));
+        $this->assign('api_error', $error);
 
         // close transaction
         if (empty($values['api_rollback'])) {

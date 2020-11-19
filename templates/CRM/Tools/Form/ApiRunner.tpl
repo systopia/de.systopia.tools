@@ -44,15 +44,15 @@
 
 <h2>Output</h2>
 
-{if $result}
+{if $api_result}
   <h3>Result</h3>
   <div class="crm-section">
-    <pre><code>{$result}</code></pre>
+    <pre><code>{$api_result}</code></pre>
   </div>
 {/if}
-{if $error}
+{if $api_error}
   <h3>Error</h3>
   <div class="crm-section">
-    <pre><code>{$error}</code></pre>
+    <pre><code>{$api_error}</code></pre>
   </div>
 {/if}
