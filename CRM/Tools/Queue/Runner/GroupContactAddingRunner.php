@@ -56,7 +56,7 @@ class CRM_Tools_Queue_Runner_GroupContactAddingRunner
                         'contact_id' => $contactId,
                     ]
                 );
-            } catch (CiviCRM_API3_Exception $exception) {
+            } catch (CRM_Core_Exception $exception) {
                 $errorMessages .= $exception->getMessage() . "\n";
                 // TODO: Is this kind of bundling elegant enough?
             }

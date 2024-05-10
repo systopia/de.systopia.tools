@@ -87,7 +87,7 @@ class CRM_Tools_Form_ApiRunner extends CRM_Core_Form
                 $this->extractParameters($values['api_params'])
             );
             $error  = '';
-        } catch (CiviCRM_API3_Exception $ex) {
+        } catch (CRM_Core_Exception $ex) {
             $result = '';
             $error  = $ex->getMessage();
             $error  .= '<br/><br/>';
